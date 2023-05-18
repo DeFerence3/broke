@@ -1,0 +1,74 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:9094461339207814114",
+      "lastPropertyId": "3:1204738883684015815",
+      "name": "Clusterr",
+      "properties": [
+        {
+          "id": "1:3556270179746812826",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:2993590698946556859",
+          "name": "cluster",
+          "type": 9
+        },
+        {
+          "id": "3:1204738883684015815",
+          "name": "initbud",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:3268407778497839794",
+      "lastPropertyId": "4:3849589936849286682",
+      "name": "Expenses",
+      "properties": [
+        {
+          "id": "1:7854579634466944778",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:6367386720829240404",
+          "name": "expense",
+          "type": 9
+        },
+        {
+          "id": "3:7926996706003173584",
+          "name": "amnt",
+          "type": 9
+        },
+        {
+          "id": "4:3849589936849286682",
+          "name": "clusterrId",
+          "type": 11,
+          "flags": 520,
+          "indexId": "1:4357024431922575771",
+          "relationTarget": "Clusterr"
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "2:3268407778497839794",
+  "lastIndexId": "1:4357024431922575771",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}
