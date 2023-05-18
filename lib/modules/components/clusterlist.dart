@@ -1,14 +1,6 @@
-import 'dart:io';
-import 'package:broke/clusterDetails.dart';
-import 'package:broke/clusterlist.dart';
-import 'package:broke/DatabaseEntities.dart';
-import 'package:broke/main.dart';
-import 'package:broke/objectbox.g.dart';
+import 'package:broke/database/DatabaseEntities.dart';
+import 'package:broke/modules/clusterDetails.dart';
 import 'package:flutter/material.dart';
-import 'package:broke/objectbox.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:path/path.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class ClusterList extends StatefulWidget {
@@ -121,11 +113,4 @@ class _ClusterListState extends State<ClusterList> {
         fontSize: 16.0
     );
   }
-
-  /*void openClusterDetails(String cluster,String initbud,int id) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => ClusterDetails(cluster,initbud,id)),
-    );
-  }*/
 }

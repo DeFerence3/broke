@@ -1,9 +1,8 @@
-import 'package:broke/expenseview.dart';
+import 'package:broke/modules/components/expenseview.dart';
 import 'package:broke/main.dart';
-import 'package:broke/objectbox.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:broke/DatabaseEntities.dart';
+import 'package:broke/database/DatabaseEntities.dart';
 
 class ClusterDetails extends StatefulWidget {
   final Clusterr cluster;
@@ -21,7 +20,6 @@ class _ClusterDetailsState extends State<ClusterDetails> {
     return (BuildContext context, int index) => ExpenseList(expenses: expense[index]);
   }
 
-  late Expenses _expenses;
   late Clusterr clusterr;
   late Stream<List<Clusterr>> streamExpenses;
   @override
@@ -136,5 +134,4 @@ class _ClusterDetailsState extends State<ClusterDetails> {
     expenseAmntController.text = "";
     Navigator.of(context).pop();
   }
-
 }

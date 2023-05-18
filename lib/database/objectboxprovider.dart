@@ -1,5 +1,4 @@
-import 'package:broke/objectbox.dart';
-import 'package:broke/objectbox.dart';
+import 'package:broke/database/objectbox.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 

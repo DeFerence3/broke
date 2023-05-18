@@ -1,6 +1,6 @@
-import 'package:broke/mainpage.dart';
-import 'package:broke/objectbox.dart';
-import 'package:broke/objectboxprovider.dart';
+import 'package:broke/modules/mainpage.dart';
+import 'package:broke/database/objectbox.dart';
+import 'package:broke/database/objectboxprovider.dart';
 import 'package:flutter/material.dart';
 
 late ObjectBox objectBox;
@@ -27,7 +27,6 @@ ThemeData updateThemes(bool useMaterial3) {
 }
 
 class MyApp extends StatelessWidget {
-
 
   @override
   Widget build(BuildContext context){

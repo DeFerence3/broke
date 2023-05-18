@@ -1,16 +1,8 @@
-import 'package:broke/clusterlist.dart';
-import 'package:broke/DatabaseEntities.dart';
-import 'package:broke/main.dart' as main;
+import 'package:broke/modules/components/clusterlist.dart';
+import 'package:broke/database/DatabaseEntities.dart';
 import 'package:broke/main.dart';
-import 'package:broke/objectbox.g.dart';
 import 'package:flutter/material.dart';
-import 'package:broke/objectbox.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:path/path.dart';
-
-
-/*late ObjectBox objbox;*/
 
 class HomePage extends StatefulWidget {
   @override
@@ -23,17 +15,15 @@ class _HomePageState extends State<HomePage> {
           (BuildContext context, int index) => ClusterList(cluster: cluster[index]);
 
   late Stream<List<Clusterr>> streamCluster;
-  late Store _store;
 
   @override
   void initState() {
     super.initState();
   }
 
-@override
+  @override
   Widget build(BuildContext context) {
-
-  final textTheme = Theme.of(context)
+    final textTheme = Theme.of(context)
       .textTheme
       .apply(displayColor: Theme.of(context).colorScheme.onSurface);
 
@@ -73,11 +63,6 @@ class _HomePageState extends State<HomePage> {
 
   final TextEditingController clusterNameController = TextEditingController();
   final TextEditingController initialBudgetController = TextEditingController();
-
-
-/*  void getData(String clusterName, String initialBudget) async {
-
-  }*/
 
   void openDialog(BuildContext context) {
     bool validate = false;
@@ -142,7 +127,7 @@ class _HomePageState extends State<HomePage> {
   void popupPoper() {
     clusterNameController.text = "";
     initialBudgetController.text = "";
-    Navigator.of(this.context).pop();
+    Navigator.of(context).pop();
   }
 
   void showToast(String text) {
