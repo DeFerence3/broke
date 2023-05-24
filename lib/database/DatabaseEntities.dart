@@ -7,11 +7,16 @@ class Clusterr {
   int id;
   String cluster;
   String? initbud;
+  DateTime datetime;
 
   @Backlink()
   final expenses = ToMany<Expenses>();
 
-  Clusterr({this.id = 0, required this.cluster,this.initbud});
+  Clusterr(
+      {this.id = 0,
+      required this.cluster,
+      this.initbud,
+      required this.datetime});
 }
 
 @Entity()

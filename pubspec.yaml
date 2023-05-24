@@ -18,6 +18,8 @@ dependencies:
   #ObjectBox
   objectbox: ^2.0.0
   objectbox_sync_flutter_libs: any
+  date_format: ^2.0.7
+  dynamic_color: ^1.6.5
 
 dev_dependencies:
   flutter_test:

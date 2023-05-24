@@ -1,12 +1,12 @@
-import 'package:broke/modules/mainpage.dart';
 import 'package:broke/database/objectbox.dart';
 import 'package:broke/database/objectboxprovider.dart';
+import 'package:broke/modules/HomePage.dart';
+import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
 
 late ObjectBox objectBox;
 
 Future<void> main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
   objectBox = await ObjectBox.create();
 
@@ -16,28 +16,31 @@ Future<void> main() async {
   ));
 }
 
-late ThemeData themeData;
-
-ThemeData updateThemes(bool useMaterial3) {
-  return ThemeData(
-      colorSchemeSeed: Colors.teal,
-      useMaterial3: useMaterial3,
-      brightness: Brightness.dark
-  ); //useLightMode ? Brightness.light :
-}
-
 class MyApp extends StatelessWidget {
+  static final _defaultLightColorScheme =
+      ColorScheme.fromSwatch(primarySwatch: Colors.teal);
+
+  static final _defaultDarkColorScheme = ColorScheme.fromSwatch(
+      primarySwatch: Colors.teal, brightness: Brightness.dark);
+
+  const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context){
-
-    themeData = updateThemes(true);
-
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "Broken",
-      theme: themeData,
-      home: HomePage(),
-    );
+  Widget build(BuildContext context) {
+    return DynamicColorBuilder(builder: (lightColorScheme, darkColorScheme) {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: "Broken",
+        theme: ThemeData(
+          colorScheme: lightColorScheme ?? _defaultLightColorScheme,
+          useMaterial3: true,
+        ),
+        darkTheme: ThemeData(
+          colorScheme: darkColorScheme ?? _defaultDarkColorScheme,
+          useMaterial3: true,
+        ),
+        home: HomePage(),
+      );
+    });
   }
 }

@@ -185,6 +185,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.1"
+  date_format:
+    dependency: "direct main"
+    description:
+      name: date_format
+      sha256: "8e5154ca363411847220c8cbc43afcf69c08e8debe40ba09d57710c25711760c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.7"
+  dynamic_color:
+    dependency: "direct main"
+    description:
+      name: dynamic_color
+      sha256: "74dff1435a695887ca64899b8990004f8d1232b0e84bfc4faa1fdda7c6f57cc1"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.6.5"
   fake_async:
     dependency: transitive
     description:
@@ -679,4 +695,4 @@ packages:
     version: "3.1.2"
 sdks:
   dart: ">=3.0.0 <4.0.0"
-  flutter: ">=3.3.0"
+  flutter: ">=3.4.0-17.0.pre"

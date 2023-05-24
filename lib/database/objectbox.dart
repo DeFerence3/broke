@@ -35,32 +35,31 @@ class ObjectBox {
     return ObjectBox._create(store);
   }
 
-
   //ClusterS#its
 
-  Stream<List<Clusterr>> getClusters(){
+  Stream<List<Clusterr>> getClusters() {
     final builder = _clusterBox.query();
 
     return builder.watch(triggerImmediately: true).map((query) => query.find());
   }
 
-  void insertCluster(String cluster,String? initbud) {
-    Clusterr newCluster = Clusterr(cluster: cluster, initbud: initbud);
+  void insertCluster(String cluster, String? initbud, DateTime datetime) {
+    Clusterr newCluster =
+        Clusterr(cluster: cluster, initbud: initbud, datetime: datetime);
 
     _clusterBox.put(newCluster);
   }
 
   //ExpenseS#its
 
-  void insertExpense(String exp,String amnt,Clusterr clusterr) {
+  void insertExpense(String exp, String amnt, Clusterr clusterr) {
     Expenses newExp = Expenses(expense: exp, amnt: amnt);
-    
+
     Clusterr updatedCluster = clusterr;
     updatedCluster.expenses.add(newExp);
     newExp.clusterr.target = updatedCluster;
-    
+
     _clusterBox.put(updatedCluster);
-    
   }
 
   Stream<List<Expenses>> getExpensesOfCluster(int clusterid){
