@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -15,6 +17,7 @@ class _HomePageState extends State<HomePage> {
   final _formKey = GlobalKey<FormState>();
   int settingsId = 0;
   late Stream<List<Clusterr>> streamCluster;
+
   static const List<IconData> settingsIcons = [
     Icons.add_to_drive_rounded,
     Icons.settings_suggest_rounded,

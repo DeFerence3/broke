@@ -112,8 +112,40 @@ class _ClusterListState extends State<ClusterList> {
       case 0:
         showToast("not implemented");
       case 1:
-        showToast("also not implemnted");
+        infoCard(context);
     }
+  }
+
+  void infoCard(BuildContext context) {
+    showDialog<void>(
+        context: context,
+        builder: (context) => AlertDialog(
+              title: Text(widget.cluster.cluster),
+              content: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("info of ${widget.cluster.cluster}"),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: popupPoper,
+                        child: const Text('Dismiss'),
+                      ),
+                      TextButton(
+                        onPressed: popupPoper,
+                        child: const Text('Add'),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ));
+  }
+
+  void popupPoper() {
+    Navigator.of(context).pop();
   }
 
   void showToast(String text) {
