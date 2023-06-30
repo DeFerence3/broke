@@ -1,5 +1,6 @@
 import 'package:broke/database/DatabaseEntities.dart';
 import 'package:broke/main.dart';
+import 'package:broke/modules/components/backuppage.dart';
 import 'package:broke/modules/components/packlist.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -16,22 +17,16 @@ class _HomePageState extends State<HomePage> {
   final TextEditingController initialBudgetController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   int settingsId = 0;
-  late Stream<List<Clusterr>> streamCluster;
+  late Stream<List<Clusterr>> stream;
 
   static const List<IconData> settingsIcons = [
     Icons.add_to_drive_rounded,
-    Icons.settings_suggest_rounded,
-    Icons.settings_suggest_rounded,
-    Icons.settings_suggest_rounded,
     Icons.settings_suggest_rounded,
   ];
 
   static const List<String> settingsOptions = <String>[
     "Backup",
-    "Option1",
-    "Option2",
-    "Option3",
-    "Option4",
+    "About",
   ];
 
   ClusterList Function(BuildContext, int) _itemBuilder(List<Clusterr> cluster) {
@@ -51,10 +46,12 @@ class _HomePageState extends State<HomePage> {
         .textTheme
         .apply(displayColor: Theme.of(context).colorScheme.onSurface);
 
+    stream = objectBox.getClusters();
+
     return Scaffold(
       appBar: appbar(textTheme),
       body: StreamBuilder<List<Clusterr>>(
-          stream: objectBox.getClusters(),
+          stream: stream,
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
               return const Center(
@@ -76,7 +73,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  appbar(TextTheme textTheme) {
+  PreferredSizeWidget appbar(TextTheme textTheme) {
     return AppBar(
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -106,7 +103,7 @@ class _HomePageState extends State<HomePage> {
                         padding: const EdgeInsets.only(left: 10),
                         child: Icon(
                           settingsIcons[index],
-                          color: Color(0xff6750a4),
+                          color: const Color(0xff6750a4),
                         ),
                       ),
                       Padding(
@@ -122,10 +119,24 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  void settingsOptionsSelectedHandler(int value) {
+  void settingsOptionsSelectedHandler(int settingsId) {
     setState(() {
-      settingsId = value;
-      showToast("$settingsId not ready");
+      switch (settingsId) {
+        case 0:
+          {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => BackupPage(objectBox)));
+          }
+          break;
+        case 1:
+          {}
+          break;
+        default:
+          {
+            showToast("$settingsId not ready");
+          }
+          break;
+      }
     });
   }
 

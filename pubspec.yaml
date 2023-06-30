@@ -18,8 +18,12 @@ dependencies:
   #ObjectBox
   objectbox: ^2.0.0
   objectbox_sync_flutter_libs: any
+
   date_format: ^2.0.7
   dynamic_color: ^1.6.5
+  file_picker: ^5.3.2
+  permission_handler: ^10.3.0
+  external_path: ^1.0.3
 
 dev_dependencies:
   flutter_test:
@@ -29,7 +33,7 @@ dev_dependencies:
   fluttertoast: ^8.2.1
 
   #ObjectBox
-  build_runner: ^2.4.4
+  build_runner: ^2.4.5
   objectbox_generator: any
 
   path_provider: ^2.0.15

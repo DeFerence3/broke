@@ -32,14 +32,16 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: "Broken",
         theme: ThemeData(
+          fontFamily: DefaultTextStyle.of(context).style.fontFamily,
           colorScheme: lightColorScheme ?? _defaultLightColorScheme,
           useMaterial3: true,
         ),
         darkTheme: ThemeData(
+          fontFamily: DefaultTextStyle.of(context).style.fontFamily,
           colorScheme: darkColorScheme ?? _defaultDarkColorScheme,
           useMaterial3: true,
         ),
-        home: HomePage(),
+        home: const HomePage(),
       );
     });
   }
