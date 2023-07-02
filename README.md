@@ -22,4 +22,5 @@ flutter install
 ```
 Or if you are using android studio just press Run button
 
+##Contribute
 Feel free to suggest features, changes, report bug, issues etc [here](https://github.com/DeFerence3/broke/issues/new)
