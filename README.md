@@ -1,7 +1,10 @@
 # broke
 
 Broke is a money management/expense tracker app ,build using flutter and ObjectBox(local databse).
+
+## Dowload
 Latest Release [here](https://github.com/DeFerence3/broke/releases)
+
 
 ## Getting Started
 Clone this repo and
