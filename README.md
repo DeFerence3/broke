@@ -1,3 +1,4 @@
+**```This project is no longer maintained, reson: rewriting in jetpack compose```**
 # broke
 
 Broke is a money management/expense tracker app ,build using flutter and ObjectBox(local databse).
