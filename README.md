@@ -8,20 +8,18 @@ Latest Release [here](https://github.com/DeFerence3/broke/releases)
 
 
 ## Getting Started
-Clone this repo and
-
-Run
+Clone this repo and run these commands
 ```
 flutter pub get
 ```
 ```
 flutter pub run build_runner build
 ```
-If you are in vscode,
+for debug install, if you are in VS Code,
 ```
 flutter install
 ```
-Or if you are using android studio just press Run button
+Or if you are using android studio just press 'Run' button (or 'Shift + F10')
 
 ## Contribute
 Feel free to suggest features, changes, report bug, issues etc [here](https://github.com/DeFerence3/broke/issues/new)
