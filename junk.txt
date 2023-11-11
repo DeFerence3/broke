@@ -1,0 +1,10 @@
+    return Scaffold(
+      appBar: appbar(textTheme),
+      body: ,
+      floatingActionButton: FloatingActionButton.extended(
+          onPressed: () {
+            addNewPackDialog(context);
+          },
+          icon: const Icon(Icons.add),
+          label: const Text("Pack")),
+    );

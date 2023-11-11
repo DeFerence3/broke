@@ -60,7 +60,7 @@ class _ClusterDetailsState extends State<ClusterDetails> {
       ),
       floatingActionButton: FloatingActionButton.extended(
           onPressed: () {
-            openDialog(context);
+            addNewExpenseDialogue(context);
           },
           icon: const Icon(Icons.add),
           label: const Text("Expense")
@@ -68,7 +68,7 @@ class _ClusterDetailsState extends State<ClusterDetails> {
     );
   }
 
-  void openDialog(BuildContext context) {
+  void addNewExpenseDialogue(BuildContext context) {
     showDialog<void>(
       context: context,
       builder: (context) => AlertDialog(

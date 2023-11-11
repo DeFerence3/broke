@@ -70,12 +70,14 @@ class ObjectBox {
         ? {
             sourceFile = File("${_store.directoryPath}/data.mdb"),
             destinationFile = File("$path/backup.zip"),
+            oldFileDeleter(destinationFile),
             await sourceFile.copy(destinationFile.path),
             showToast("Backup Successful")
           }
         : {
             sourceFile = File(path),
             destinationFile = File("${_store.directoryPath}/data.mdb"),
+
             await sourceFile.copy(destinationFile.path),
             showToast("Restore Successful")
           };
@@ -88,5 +90,16 @@ class ObjectBox {
         gravity: ToastGravity.BOTTOM,
         textColor: Colors.white,
         fontSize: 16.0);
+  }
+
+  void oldFileDeleter(File destinationFile) async {
+    if (destinationFile.existsSync()) {
+      try {
+        await destinationFile.delete();
+        showToast("File deleted");
+      } catch (error) {
+        debugPrint(error.toString());
+      }
+    }
   }
 }

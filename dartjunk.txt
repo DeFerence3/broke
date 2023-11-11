@@ -1,0 +1,45 @@
+class JhnkCode {
+  @override
+Widget build(BuildContext context) {
+  final textTheme = Theme.of(context).textTheme.apply(displayColor: Theme.of(context).colorScheme.onSurface);
+
+  stream = objectBox.getClusters();
+
+  return Scaffold(
+    body: CustomScrollView(
+      slivers: [
+        SliverAppBar(
+          title: Text(
+            "You Broke ",
+            style: textTheme.headlineLarge,
+          ),
+          actions: [
+
+          ],
+          floating: true,
+          // Add other SliverAppBar properties as needed
+        ),
+        SliverToBoxAdapter(
+          child: StreamBuilder<List<Clusterr>>(
+            stream: stream,
+            builder: (context, snapshot) {
+              if (!snapshot.hasData) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              } else {
+                final clusters = snapshot.data!;
+                return ListView.builder(
+                  itemCount: clusters.length,
+                  itemBuilder: _itemBuilder(snapshot.data ?? []),
+                );
+              }
+            },
+          ),
+        ),
+      ],
+    ),
+    floatingActionButton: );
+}
+
+}

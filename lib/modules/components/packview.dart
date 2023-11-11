@@ -1,3 +1,4 @@
+///Pack List
 import 'package:broke/database/DatabaseEntities.dart';
 import 'package:broke/modules/PackDetails.dart';
 import 'package:date_format/date_format.dart';
@@ -32,6 +33,7 @@ class _ClusterListState extends State<ClusterList> {
         .textTheme
         .apply(displayColor: Theme.of(context).colorScheme.onSurface);
 
+    //Each items
     return Card(
       color: Theme.of(context).colorScheme.surface,
       elevation: 20,
@@ -116,6 +118,7 @@ class _ClusterListState extends State<ClusterList> {
     }
   }
 
+  //Shows all the information about the pack
   void infoCard(BuildContext context) {
     showDialog<void>(
         context: context,
