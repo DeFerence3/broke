@@ -156,16 +156,15 @@ class _BackupPageState extends State<BackupPage> {
   permissionCheckerAndPathSelector(bool mode) async {
     String? selectedDirectory;
     FilePickerResult? result;
-    File file, fi;
+    File fi;
     mode
         ? {
             selectedDirectory = await FilePicker.platform.getDirectoryPath(),
-            if (selectedDirectory != null)
-              {
-                fi = File("$selectedDirectory/bacup.zip"),
-                fi.existsSync() ? fi.deleteSync() : null,
-                widget.objectbox.backupRestoreObjectBox(selectedDirectory, mode)
-              }
+            {
+              fi = File("$selectedDirectory/bacup.zip"),
+              fi.existsSync() ? fi.deleteSync() : null,
+              widget.objectbox.backupRestoreObjectBox(selectedDirectory!, mode)
+            }
           }
         : {
             result = await FilePicker.platform.pickFiles(

@@ -12,7 +12,7 @@ Future<void> main() async {
 
   runApp(ObjectBoxProvider(
     objectBox: objectBox,
-    child: MyApp(),
+    child: const MyApp(),
   ));
 }
 

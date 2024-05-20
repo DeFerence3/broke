@@ -76,7 +76,7 @@ class _ClusterListState extends State<ClusterList> {
                                     padding: const EdgeInsets.only(left: 10),
                                     child: Icon(
                                       moreOptionsIcon[index],
-                                      color: Color(0xff6750a4),
+                                      color: const Color(0xff6750a4),
                                     ),
                                   ),
                                   Padding(

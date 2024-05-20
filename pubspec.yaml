@@ -27,19 +27,17 @@ dependencies:
 
   flutter_svg: ^2.0.7
 
+  fluttertoast: any
+  provider: any
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^2.0.2
-  fluttertoast: ^8.2.2
-
-  #ObjectBox
   build_runner: ^2.4.6
   objectbox_generator: any
 
   path_provider: ^2.0.15
-  provider: ^6.0.5
 
 # The following section is specific to Flutter packages.
 flutter:
